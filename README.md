@@ -8,11 +8,11 @@
 Expense Tracker is a Python command-line utility for tracking and organizing personal financial expenditures. It allows users to record daily spending, classify transactions by category, review full transaction histories, and analyze overall spending metrics stored in a local CSV file.
 
 ## ❖ Key Features
-- ▪ Add new expense records with timestamps, categories, amounts, and descriptions.
-- ▫ Tabular display of all logged expenditures.
-- ▴ Automated calculation of cumulative spending.
-- ▿ Category-wise expense grouping and summary generation.
-- ⬡ Persistent local storage using `expenses.csv`.
+- Add new expense records with timestamps, categories, amounts, and descriptions.
+- Tabular display of all logged expenditures.
+- Automated calculation of cumulative spending.
+- Category-wise expense grouping and summary generation.
+- Persistent local storage using `expenses.csv`.
 
 ## ⬢ Technologies Used
 - Python 3
