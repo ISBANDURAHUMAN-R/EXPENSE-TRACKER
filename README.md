@@ -20,25 +20,25 @@ Expense Tracker is a Python command-line utility for tracking and organizing per
 ```mermaid
 graph TD
     subgraph CLI ["Console User Interface"]
-        Menu[Interactive Menu Loop] --> Option{Selected Operation}
-        Option -- 1 --> AddExp[Add New Expense]
-        Option -- 2 --> ViewExp[View All Records]
-        Option -- 3 --> CalcTotal[Calculate Cumulative Total]
-        Option -- 4 --> GroupCat[Category-wise Summary]
+        Menu["Interactive Menu Loop"] --> Option{"Selected Operation"}
+        Option -- 1 --> AddExp["Add New Expense"]
+        Option -- 2 --> ViewExp["View All Records"]
+        Option -- 3 --> CalcTotal["Calculate Cumulative Total"]
+        Option -- 4 --> GroupCat["Category-wise Summary"]
     end
 
     subgraph AnalyticsEngine ["Expenditure Processing Engine"]
-        AddExp --> InputVal[Date & Amount Input Validator]
-        InputVal --> RecordFormat[Format Tuple: Date | Category | Amount]
-        ViewExp --> TabularFormat[Tabular Console Formatter]
-        CalcTotal --> SumAggregator[Accumulator Sum Engine]
-        GroupCat --> CatAggregator[Category Dictionary Aggregator]
+        AddExp --> InputVal["Date & Amount Input Validator"]
+        InputVal --> RecordFormat["Format Tuple: Date • Category • Amount"]
+        ViewExp --> TabularFormat["Tabular Console Formatter"]
+        CalcTotal --> SumAggregator["Accumulator Sum Engine"]
+        GroupCat --> CatAggregator["Category Dictionary Aggregator"]
     end
 
     subgraph FileStore ["Data Persistence Layer"]
-        RecordFormat --> CSVWriter[CSV Append Stream]
-        CSVWriter --> CSV[(expenses.csv)]
-        CSV --> CSVReader[CSV Read Stream]
+        RecordFormat --> CSVWriter["CSV Append Stream"]
+        CSVWriter --> CSV[("expenses.csv")]
+        CSV --> CSVReader["CSV Read Stream"]
         CSVReader --> TabularFormat
         CSVReader --> SumAggregator
         CSVReader --> CatAggregator
